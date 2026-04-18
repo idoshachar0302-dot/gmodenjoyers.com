@@ -1,12 +1,46 @@
+import { useState, useEffect } from 'react'
 import styles from './Hero.module.css'
+import GodRays from './GodRays'
 
 const DISCORD_INVITE = 'https://discord.gg/jentNPmB3T'
 
+const SLIDES = [
+  '/backgrounds/bofreemian.jpg',
+  '/backgrounds/busti_crazy_builders.jpg',
+  '/backgrounds/gm_construct_cinematic.jpg',
+  '/backgrounds/gm_everything.jpg',
+  '/backgrounds/gm_explosion.jpg',
+  '/backgrounds/gm_mingebags.jpg',
+  '/backgrounds/gm_overgrown.jpg',
+]
+
 export default function Hero() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(i => (i + 1) % SLIDES.length)
+    }, 10000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className={styles.hero}>
+      {/* Slideshow */}
+      {SLIDES.map((src, i) => (
+        <div
+          key={src}
+          className={styles.slide}
+          style={{ backgroundImage: `url(${src})`, opacity: i === current ? 1 : 0 }}
+          aria-hidden="true"
+        />
+      ))}
+
+      {/* Overlay to keep content readable */}
+      <div className={styles.overlay} aria-hidden="true" />
       <div className={styles.grid} aria-hidden="true" />
       <div className={styles.glow} aria-hidden="true" />
+      <GodRays />
 
       <div className={styles.content}>
         <div className={styles.logo}>

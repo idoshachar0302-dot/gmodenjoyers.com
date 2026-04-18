@@ -11,7 +11,11 @@ export default function About() {
     <section id="about" className={styles.about}>
       <div className={styles.inner}>
         <p className={styles.label}>Who We Are</p>
-        <h2 className={styles.title}>About GmodEnjoyers</h2>
+        <h2 className={styles.title}>
+          About&nbsp;&nbsp;<img src="/gmodenjoyers.png" alt="G" className={styles.logoImg} />
+          mod<span className={styles.accent}>Enjoyers</span>
+          <span className={styles.dot}>.</span>
+        </h2>
         <p className={styles.body}>
           Founded by original DarkRP server developers from 2012, GmodEnjoyers is built on
           experience, community, and innovation. We're here to push Garry's Mod beyond its

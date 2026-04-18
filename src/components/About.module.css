@@ -24,6 +24,26 @@
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.1;
   margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.05em;
+}
+
+.logoImg {
+  height: 0.9em;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.accent {
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-dim);
+}
+
+.dot {
+  color: var(--accent);
 }
 
 .body {
@@ -61,5 +81,6 @@
 }
 
 @media (max-width: 540px) {
+  .about { padding: 4rem 1.25rem; }
   .stats { flex-direction: column; gap: 1.2rem; }
 }
