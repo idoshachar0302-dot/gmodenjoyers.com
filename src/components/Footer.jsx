@@ -1,6 +1,6 @@
 import styles from './Footer.module.css'
 
-const DISCORD_INVITE = 'https://discord.gg/'
+const DISCORD_INVITE = 'https://discord.gg/jentNPmB3T'
 
 export default function Footer() {
   return (

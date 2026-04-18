@@ -1,6 +1,6 @@
 import styles from './Hero.module.css'
 
-const DISCORD_INVITE = 'https://discord.gg/'
+const DISCORD_INVITE = 'https://discord.gg/jentNPmB3T'
 
 export default function Hero() {
   return (
@@ -10,7 +10,8 @@ export default function Hero() {
 
       <div className={styles.content}>
         <div className={styles.logo}>
-          Gmod<span className={styles.accent}>Enjoyers</span>
+          <img src="/gmodenjoyers.png" alt="G" className={styles.logoImg} />
+          mod<span className={styles.accent}>Enjoyers</span>
           <span className={styles.dot}>.</span>
         </div>
 
