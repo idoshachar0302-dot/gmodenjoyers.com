@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -28,8 +28,7 @@ export default function App() {
         <Route path="/"        element={<Home />} />
         <Route path="/servers" element={<Servers />} />
         <Route path="/vip"     element={<Vip />} />
-        <Route path="/404"     element={<NotFound />} />
-        <Route path="*"        element={<Navigate to="/404" replace />} />
+        <Route path="*"        element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
