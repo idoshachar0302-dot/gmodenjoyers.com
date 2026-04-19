@@ -1,9 +1,13 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Footer from './components/Footer'
 import Divider from './components/Divider'
+import Servers from './pages/Servers'
+import Vip from './pages/Vip'
 
-export default function App() {
+function Home() {
   return (
     <>
       <Hero />
@@ -12,5 +16,18 @@ export default function App() {
       <Divider />
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/"        element={<Home />} />
+        <Route path="/servers" element={<Servers />} />
+        <Route path="/vip"     element={<Vip />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

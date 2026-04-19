@@ -1,0 +1,230 @@
+.page {
+  min-height: 100vh;
+  padding-top: 60px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Hero */
+.hero {
+  padding: 5rem 0 3rem;
+  border-bottom: 1px solid rgba(57,255,20,0.1);
+  margin-bottom: 3rem;
+}
+
+.label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  color: var(--grey);
+  font-size: 1.05rem;
+}
+
+/* Server list */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Card */
+.card {
+  background: #111116;
+  border: 1px solid rgba(57,255,20,0.12);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(57,255,20,0.3);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cardName {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.cardDesc {
+  color: var(--grey);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.cardMap {
+  color: rgba(160,160,176,0.6);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.online  { color: #39ff14; }
+.online  .dot { background: #39ff14; box-shadow: 0 0 6px #39ff14; }
+.offline { color: #ff4444; }
+.offline .dot { background: #ff4444; }
+
+.players {
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+/* Actions */
+.cardActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.7rem 2rem;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(57,255,20,0.3);
+  transform: scale(1.03);
+}
+
+.btnSecondary {
+  border-color: rgba(57,255,20,0.4);
+  color: rgba(57,255,20,0.7);
+}
+
+.btnSecondary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.btnDisabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* How to join */
+.howTo {
+  background: #111116;
+  border: 1px solid rgba(57,255,20,0.08);
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.howToTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: steps;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.steps li {
+  counter-increment: steps;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--grey);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.steps li::before {
+  content: counter(steps);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--accent);
+  min-width: 1.4rem;
+  line-height: 1.5;
+}
+
+.steps strong {
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+  .cardMeta { align-items: flex-start; }
+  .cardTop  { flex-direction: column; }
+  .btn      { width: 100%; text-align: center; }
+  .cardActions { flex-direction: column; }
+}

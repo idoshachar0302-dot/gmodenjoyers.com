@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Hero.module.css'
 import GodRays from './GodRays'
 
@@ -54,14 +55,14 @@ export default function Hero() {
         </p>
 
         <div className={styles.btnRowMain}>
-          <a href="#servers" className={styles.btn}>Servers</a>
+          <Link to="/servers" className={styles.btn}>Servers</Link>
           <a href={DISCORD_INVITE} className={styles.btn} target="_blank" rel="noopener noreferrer">
             Community
           </a>
         </div>
 
         <div className={styles.btnRowVip}>
-          <a href="#vip" className={`${styles.btn} ${styles.btnVip}`}>VIP Packages</a>
+          <Link to="/vip" className={`${styles.btn} ${styles.btnVip}`}>VIP Packages</Link>
         </div>
       </div>
 
