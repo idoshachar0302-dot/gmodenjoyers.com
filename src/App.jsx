@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -7,6 +7,7 @@ import Divider from './components/Divider'
 import Servers from './pages/Servers'
 import Vip from './pages/Vip'
 import NotFound from './pages/NotFound'
+import Secret from './pages/Secret'
 
 function Home() {
   return (
@@ -20,16 +21,26 @@ function Home() {
   )
 }
 
-export default function App() {
+function Layout() {
+  const { pathname } = useLocation()
   return (
-    <BrowserRouter>
-      <Navbar />
+    <>
+      {pathname !== '/secret' && <Navbar />}
       <Routes>
         <Route path="/"        element={<Home />} />
         <Route path="/servers" element={<Servers />} />
         <Route path="/vip"     element={<Vip />} />
+        <Route path="/secret"  element={<Secret />} />
         <Route path="*"        element={<NotFound />} />
       </Routes>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
     </BrowserRouter>
   )
 }

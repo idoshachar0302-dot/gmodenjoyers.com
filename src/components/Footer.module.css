@@ -16,3 +16,9 @@
 .footer a:hover {
   text-shadow: 0 0 8px var(--accent-dim);
 }
+
+.copyright {
+  color: var(--grey) !important;
+  text-decoration: none;
+  cursor: default;
+}
