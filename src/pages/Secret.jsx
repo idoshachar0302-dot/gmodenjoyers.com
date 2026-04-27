@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import styles from './Secret.module.css'
 
 const SLIDES = [
-  '/backgrounds/bofreemian.jpg',
-  '/backgrounds/busti_crazy_builders.jpg',
-  '/backgrounds/gm_construct_cinematic.jpg',
-  '/backgrounds/gm_explosion.jpg',
-  '/backgrounds/gm_mingebags.jpg',
-  '/backgrounds/gm_overgrown.jpg',
+  '/backgrounds%202/Agent67.png',
+  '/backgrounds%202/Average%20greeks.png',
+  '/backgrounds%202/Chase.png',
+  '/backgrounds%202/Hostage.png',
+  '/backgrounds%202/Payday%203%20remastered.png',
+  '/backgrounds%202/Riot.png',
 ]
 
 export default function Secret() {
